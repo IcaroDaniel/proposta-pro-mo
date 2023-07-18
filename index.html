@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Proposta Irrecusável</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            margin: 10px;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .no-button {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #dc3545;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .no-button:hover {
+            left: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Me da o cu?</h2>
+        <button class="button" onclick="responder('Sim')">Sim</button>
+        <button class="no-button" onmouseover="moveNoButton()">Não</button>
+    </div>
+
+    <script>
+        function responder(resposta) {
+            if (resposta === 'Sim') {
+                window.location.href = 'https://www.criarmeme.com.br/meme/meme-58247-Entao-Voce-E-Safada-Ne--Ja-Quero.jpg'; // Redirecionar para outra página quando clicar em "Sim"
+            } else {
+                alert('Sua resposta é: Não');
+            }
+        }
+
+        function moveNoButton() {
+            const button = document.querySelector('.no-button');
+            const pageWidth = window.innerWidth;
+            const pageHeight = window.innerHeight;
+
+            const randomX = Math.random() * (pageWidth - 100); // 100 é o tamanho do botão
+            const randomY = Math.random() * (pageHeight - 50); // 50 é o tamanho do botão
+
+            button.style.left = `${randomX}px`;
+            button.style.top = `${randomY}px`;
+        }
+    </script>
+</body>
+</html>
